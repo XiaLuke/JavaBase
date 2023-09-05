@@ -15,8 +15,6 @@
     <name>JAVA</name>
     <description>JAVA</description>
     <modules>
-        <module>algorithm</module>
-        <module>java8</module>
         <module>java_core_technology</module>
     </modules>
     <properties>
