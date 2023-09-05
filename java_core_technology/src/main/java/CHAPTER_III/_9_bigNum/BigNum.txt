@@ -1,0 +1,15 @@
+If the basic integer and floating point precision cannot meet the requirements, you can use the Big Integer and Big Decimal in java.math.
+These two classes can handle numeric values containing sequences of numbers of arbitrary length
+Big Integer class implements arbitrary precision integer operations
+Big Decimal implements floating-point operations with arbitrary precision
+
+For larger numbers, you can use a constructor with a string parameter
+like:
+    BigInteger bi = new BigInteger("1234567890987654321");
+
+But you can't use arithmetic operators, you need to use the methods provided by the class
+like:
+    BigInteger bi1 = new BigInteger("1234567890987654321");
+    BigInteger bi2 = new BigInteger("1234567890987654321");
+    BigInteger bi3 = bi1.add(bi2); // bi1 + bi2
+    BigInteger bi4 = bi1.multiply(bi1.add(BigInteger.valueOf(3))); // bi1 * (bi1 + 3)
