@@ -120,6 +120,20 @@
     // provide: public Person(int age,String name){}
     // used: person = new Person(); This is the wrong way
 
+    // 4.6.4 Display Field Initialization
+    // In the constructor with parameters, you can set the value of the field, make sure your field is not null
+
+    // 4.6.5 Parameters Name
+    // When writing constructors, you often get bothered with parameter naming
+    // If the naming is not standardized during development, the subsequent reading is not clear.
+
+    // 4.6.6 Cell Other Constructors
+    // The keyword this indicates the implicit parameter of a method
+    // But in the constructor, the first sentence is like this(...), and this constructor will call another constructor in the same class.
+
+    // 4.6.7 Initialization Block
+    // In a Class, Can contain any number of code blocks, as long as the object of this class is constructed, these blocks will be executed.
+    // The code block is like this: {System.out.println("Hello World!");}
 
 
 
