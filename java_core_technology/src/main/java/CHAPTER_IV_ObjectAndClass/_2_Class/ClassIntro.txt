@@ -1,0 +1,146 @@
+/** 4.1.1 Class */
+    // class is a template for creating objects
+    // The process of constructing an object from a class is called creating an instance of the class
+
+    // encapsulation
+    // Is an important concept for dealing with objects,
+    // encapsulation is the combination of data and behavior in a package,
+    // and hide the specific implementation from the user of the object.
+
+    // The data in the object becomes an instance field,
+    // and the process of manipulating the data becomes a method.
+
+    // The key to implementing encapsulation is that methods in a class must never directly access instance fields of other classes.
+    // Programs can only interact with object data through object methods。
+    // Encapsulation gives objects a "black box" property: it doesn't matter what's in the box, just how to interact with the box.
+    // improved reusability and operability
+
+
+/** 4.1.2 Object */
+    // if you want use OOP, Be sure to understand the three main characteristics of an object
+    // 1. State: How the object responds when those methods are called
+    // 2. Identity: How to distinguish between different objects with the same behavior and state
+    // 3. Behavior: Objects can accomplish those operations, or methods can be applied to objects
+
+/** 4.1.3 Identification Class */
+    // In traditional procedural programs, we have to start writing the program from the main function at the top
+    // But in OOP, there is no The so-called top
+
+    // What is a class? you can manipulate it through a series of methods, and these methods have practical meaning for the class
+
+/** 4.1.4 Relationships between classes */
+    // Common relationships are:
+    // 1. Dependency("uses-a"): A class uses another class as a parameter or local variable, but the two classes are not related in any other way
+    // 2. Aggregation("has-a"): A class has a reference to another class, but the two classes are not related in any other way
+    // 3. Inheritance("is-a"): A class is a subclass of another class, and the two classes are related in other ways
+
+    // In the program, interdependent classes should be reduced as much as possible.
+    // if class a does not know the existence of class B,
+    // it will not care about the change of class B (the change of class B will not cause a Bug),
+    // I .e. reducing the coupling between classes
+
+/** 4.3 How to customize a class etc */
+    // if you want definition a Class
+    // a simple Class is like this: public class ClassName{}, ClassName is the name of the class
+    // oh yeah, till here, you can definition Class
+
+    // second, you can add some fields to the class, It's like when you describe an object that has those characteristics.
+    // for example, you want to describe a person, you can add some fields to the class, such as name, age, height, weight, etc.
+    // this Class is like this: public class Person{ int age; String name; double height; double weight; }
+
+    // third, how to use this Class after you definition a Class
+    // if you wang description a person, include name, age etc.
+    // you will defining Construction Parameters( just a method in the class, but the method's name is the same as the class name, and there is no return value and public)
+    // construction has two types: default construction and parameter construction
+    // default construction is like this: public Person(){}
+    // parameter construction is like this: public Person(int age, String name, double height, double weight){ this.age = age; this.name = name; this.height = height; this.weight = weight; }
+    // both of them are in the class, and you can use them to create a object
+    // The difference between them is like, I have a friend, my friend is called Zhang San, his age is 24 years old; another description is that I have a friend named Zhang San, age 24 years old
+
+    // fourth, You described this man, but how do you answer when someone asks you how old he is?
+    // To here, you should use get/set method
+    // It's mean you can use get/set method to get/set the value of the field
+    // like this: public int getAge(){ return age; }, public void setAge(int age){ this.age = age; }
+    // Here you can answer the question of how old he is, you just need to call the getAge() method
+    // As long as you call the corresponding method, and be sure this Class has already been initialized
+    // and the Class will return the value what you need when you call the method
+    // get/set method has other name, namely encapsulation, It ensures that the field does not receive outside damage
+
+    // From the previous we already know how to define classes and access properties
+    // But how do you ensure that the field cannot be directly accessed externally?
+    // If some field is not allowed to be accessed externally, how to do it?
+    // You just need to add the private keyword before the field, like this: private int age;
+    // This is also the case if certain methods need to be privatized.
+
+    // If you want to use this Class, without descript some fields,and make them have default value
+    // Like you just want say i hava a friend, but still answer "how old is he?"
+    // You can have a default value for the field in this class.
+    // Like this: private int age = 23;
+    // You can get the value when you call getAge() method, and the value is 23
+
+    // or you can make these fields become static fields,and set the value of the field when you define the class
+    // Like this: private static int age = 23;
+
+    // To here, Every time you introduce your friend now, you need to say that I have a friend first.
+    // It's so stupid
+    // If you directly want to know how old your friend is, you can use static method
+    // Like this: public static int getAge(){ return age; }
+    // You can call this method directly without creating an object，like my friend is 24 years old.
+
+/** 4.5 method parameters */
+
+    // In this year you introduce your friend 23 years old
+    // but next year, you can't say your friend is 23
+    // So，here you need to use method parameters, try to call setAge() method
+    // when you create new Class or make setAge() method static
+    // you can call setAge() method like this: person.setAge(24),or Person.setAge(24)
+
+
+/** 4.6 Object Construction */
+    // 4.6.1 Overloading
+    // in the same class, there may be multiple constructors, like public Person(){} and public Person(int age, String name, double height, double weight){},
+    // these hava same method name, but different parameters, this is called overloading
+    // When constructing the object, the compiler selects the correct method by matching the parameter types in the method header with the value types used in the specific method call
+    // If the compiler cannot find a matching parameter, it will generate a compile-time error because there is no match at all, or none is better than the others
+    // The process of finding matches is called overload resolution
+
+    // 4.6.2 Default Construction
+    // If you don't define a constructor, the compiler will automatically generate a default constructor for you
+    // int type is 0, double type is 0.0, boolean type is false, and reference type is null
+
+    // 4.6.3 No parameter constructor
+    // What's no parameter constructor?
+    // Still the same example, you want introduce your best friend, just one, so ,this Object hava some default value
+    // public Person(){name = "laowang";age=22;height="123"},this is a no parameter constructor
+    // If you no preparation constructor when you create Class, It will provide a no-parameter constructor,
+    // in this default constructor, will set all instance fields to default values
+
+    // But if you provide at lease one constructor, and no parameterless constructor provided,
+    // it is illegal not to provide parameters when you construct an object.
+    // provide: public Person(int age,String name){}
+    // used: person = new Person(); This is the wrong way
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
