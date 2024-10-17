@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/algorithm/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java8/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/javaBase/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6/Spring-one-jdk17/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java_core_technology/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/pushBox/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/pushBox/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$APPLICATION_HOME_DIR$/jbr/bin/src/main/java" charset="UTF-8" />
-    <file url="file://$APPLICATION_HOME_DIR$/jbr/bin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhangben/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

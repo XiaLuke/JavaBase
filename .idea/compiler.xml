@@ -2,27 +2,27 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="javaBase" />
         <module name="java_core_technology" />
-        <module name="pushBox" />
-        <module name="java8" />
-        <module name="algorithm" />
+        <module name="zhangben" />
+        <module name="zhagnben" />
+        <module name="Spring-one-jdk17" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="txz" target="1.8" />
+      <module name="Spring6" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="algorithm" options="-parameters" />
-      <module name="java8" options="-parameters" />
-      <module name="javaBase" options="-parameters" />
+      <module name="Spring-one-jdk17" options="-parameters" />
       <module name="java_core_technology" options="-parameters" />
+      <module name="zhagnben" options="-parameters" />
+      <module name="zhangben" options="-parameters" />
     </option>
   </component>
 </project>

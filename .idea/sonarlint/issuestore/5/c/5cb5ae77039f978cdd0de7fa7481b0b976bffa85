@@ -1,0 +1,28 @@
+
+J
+java:S3740,"/Provide the parametrized type for this generic.(†‹Âäùÿÿÿÿ
+J
+java:S37402"/Provide the parametrized type for this generic.(µ³Åùÿÿÿÿ
+X
+java:S2094"BRemove this empty class, write its code or make it an "interface".(‹şÊÌ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(üªœß
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ë»£ıÿÿÿÿ
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(™î¦ß
+W
+java:S1854:";Remove this useless assignment to local variable "methods".(Ğõ—'8ÁšÓüŞ/
+E
+java:S1197&"*Move the array designators [] to the type.(ùï¾ÿÿÿÿÿ
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(”³øÿÿÿÿ
+N	java:S1063"9Replace this use of System.out or System.err by a logger.(à×½™
+N	java:S1066"9Replace this use of System.out or System.err by a logger.(ãÙƒ
+H
+java:S1481:",Remove this unused "methods" local variable.(Ğõ—'8ÄšÓüŞ/
+X	java:S125="<This block of commented-out lines of code should be removed.(—–ß·8ÈšÓüŞ/
+B
+java:S3011Q",This accessibility update should be removed.(˜ÂÓ˜
+G
+java:S3011U",This accessibility bypass should be removed.(«ŒúÎøÿÿÿÿ
+G
+java:S3011e",This accessibility update should be removed.(Ÿü¹•ûÿÿÿÿ
+B
+java:S1144 ",Remove this unused private "method3" method.(êˆ‹Ù
