@@ -22,8 +22,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring-one-jdk17" options="-parameters" />
-      <module name="java_core_technology" options="" />
-      <module name="zhagnben" options="" />
+      <module name="java_core_technology" options="-parameters" />
+      <module name="zhagnben" options="-parameters" />
       <module name="zhangben" options="-parameters" />
     </option>
   </component>

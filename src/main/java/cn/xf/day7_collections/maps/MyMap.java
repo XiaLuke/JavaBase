@@ -1,4 +1,4 @@
-package cn.xf.day8_maps;
+package cn.xf.day7_collections.maps;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
