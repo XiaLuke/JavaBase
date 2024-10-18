@@ -16,7 +16,7 @@ public class MyWildcard_4 {
         list2.add(new Wildcard_Car2());
         list2.add(new Wildcard_Car2());
         list2.add(new Wildcard_Car2());
-        print(list2);
+//        print(list2);
 
         List<MyGenericsMethod_3> list3 = new ArrayList<>();
         list3.add(new MyGenericsMethod_3());

@@ -8,7 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="java_core_technology" />
+        <module name="thread" />
         <module name="zhangben" />
+        <module name="design_pattern" />
         <module name="zhagnben" />
         <module name="Spring-one-jdk17" />
       </profile>
@@ -20,8 +22,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring-one-jdk17" options="-parameters" />
-      <module name="java_core_technology" options="-parameters" />
-      <module name="zhagnben" options="-parameters" />
+      <module name="java_core_technology" options="" />
+      <module name="zhagnben" options="" />
       <module name="zhangben" options="-parameters" />
     </option>
   </component>
