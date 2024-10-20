@@ -4,7 +4,7 @@ import cn.xf._01String.Stringbuffer_;
 import org.junit.Test;
 
 import javax.xml.crypto.Data;
-import java.io.IOException;
+import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
@@ -82,21 +82,6 @@ public class MyConnection {
             String str = new String(data,0,length);
             System.out.println("收到"+pack.getSocketAddress()+"发送的数据" + str);
         }
-
-    }
-
-    /**
-     * tcp中，需要先建立通信
-     * */
-    @Test
-    public void tcpConnection(){
-        // 使用Socket管道创建客户端
-
-        // 从通道中得到字节输出流
-    }
-
-    @Test
-    public void tcpReceive(){
 
     }
 }
