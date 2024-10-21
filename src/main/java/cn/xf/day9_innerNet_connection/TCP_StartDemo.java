@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
+import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
 // 用户聊天功能，启动时，输入名称即可进入聊天室
@@ -15,6 +17,8 @@ public class TCP_StartDemo extends JFrame {
     private JTextField nicknameField;
     private JButton enterButton;
     private JButton cancelButton;
+
+    private Socket socket;
 
     public TCP_StartDemo() {
         // 设置窗口标题
@@ -58,14 +62,20 @@ public class TCP_StartDemo extends JFrame {
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String nickname = nicknameField.getText().trim();
+                String nickname = nicknameField.getText();
                 if (!nickname.isEmpty()) {
-                    // 处理进入逻辑
-                    System.out.println("用户 " + nickname + " 进入聊天室");
+                    // 将登录信息发送给服务端，请求socket管道，建立与服务端链接
+                    getLoinInfo();
+                    // 进入聊天界面；接收在线人数；接收群聊消息
+                    new TCP_Signin_Window(nickname, socket);
                     // 关闭当前窗口
                     dispose();
                 } else {
-                    JOptionPane.showMessageDialog(TCP_StartDemo.this, "昵称不能为空", "提示", JOptionPane.WARNING_MESSAGE);
+                    // 设置输入框边框颜色为红色
+                    nicknameField.setBorder(BorderFactory.createLineBorder(Color.RED));
+                    JOptionPane.showMessageDialog(TCP_StartDemo.this, "请输入昵称", "提示", JOptionPane.WARNING_MESSAGE);
+
+//                    JOptionPane.showMessageDialog(TCP_StartDemo.this, "昵称不能为空", "提示", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
@@ -101,11 +111,21 @@ public class TCP_StartDemo extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        // 设置系统默认字符集为 UTF-8
-        System.setProperty("file.encoding", "UTF-8");
-
-        // 创建并显示窗口
-        new TCP_StartDemo();
+    public void getLoinInfo() {
+        // 获取服务端地址
+        String serverIp = "127.0.0.1";
+        int serverPort = 5123;
+        try {
+            // 请求获取管道
+            socket = new Socket(serverIp, serverPort);
+            // 获取发送消息，类型为1，并获取自己名称
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+            dos.writeInt(1);
+            dos.writeUTF(nicknameField.getText());
+            dos.flush();
+            // 不能关闭socket
+        } catch (Exception e) {
+            System.out.println("登录失败");
+        }
     }
 }

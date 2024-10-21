@@ -6,23 +6,36 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.net.Socket;
+import java.util.List;
 
-public class TCP_SignIn_Window extends JFrame {
+public class TCP_Signin_Window extends JFrame {
 
     private JTextArea messageDisplay;
     private JTextArea messageInput;
     private JButton sendButton;
-    private JTextArea onlineUsersDisplay;
+//    private JTextArea onlineUsersDisplay;
+    private JList<String> onlineUsersDisplay = new JList<>();
+    private Socket socket;
 
-    public TCP_SignIn_Window() {
-        // 设置窗口标题
-        setTitle("局域网聊天 - 群聊界面");
+    public TCP_Signin_Window(String name, Socket socket) {
+        this();// 初始化界面
+        this.setTitle("局域网聊天 - " + name);
+        this.socket = socket;
+        // 马上开始处理接收到的消息 TCP_Channel_Reader
+        new TCP_Channel_Reader(socket,this).run();
+    }
 
+
+    // 接收当前登录人信息
+    public TCP_Signin_Window() {
         // 设置窗口大小
         setSize(800, 600);
-
+        setLayout(new BorderLayout());
         // 设置窗口关闭操作
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setLocationRelativeTo(null);// 窗口剧中
 
         // 创建主面板
         JPanel mainPanel = new JPanel(new BorderLayout());
@@ -31,7 +44,7 @@ public class TCP_SignIn_Window extends JFrame {
         // 创建消息展示框
         messageDisplay = new JTextArea();
         messageDisplay.setEditable(false);
-        messageDisplay.setFont(new Font("Arial", Font.PLAIN, 14));
+        messageDisplay.setFont(new Font("楷体", Font.PLAIN, 14));
         messageDisplay.setLineWrap(true);
         messageDisplay.setWrapStyleWord(true);
         JScrollPane messageScrollPane = new JScrollPane(messageDisplay);
@@ -44,7 +57,7 @@ public class TCP_SignIn_Window extends JFrame {
 
         // 创建消息输入框
         messageInput = new JTextArea(5, 30); // 设置行数为5，列数为30
-        messageInput.setFont(new Font("Arial", Font.PLAIN, 14));
+        messageInput.setFont(new Font("楷体", Font.PLAIN, 14));
         messageInput.setLineWrap(true);
         messageInput.setWrapStyleWord(true);
         messageInput.addKeyListener(new KeyAdapter() {
@@ -70,11 +83,14 @@ public class TCP_SignIn_Window extends JFrame {
         inputPanel.add(sendButton, BorderLayout.EAST);
 
         // 创建在线人数展示框
-        onlineUsersDisplay = new JTextArea();
-        onlineUsersDisplay.setEditable(false);
-        onlineUsersDisplay.setFont(new Font("Arial", Font.PLAIN, 14));
-        onlineUsersDisplay.setLineWrap(true);
-        onlineUsersDisplay.setWrapStyleWord(true);
+        onlineUsersDisplay.setFont(new Font("楷体", Font.PLAIN, 14));
+        onlineUsersDisplay.setFixedCellWidth(120);
+        onlineUsersDisplay.setVisibleRowCount(13);
+//        onlineUsersDisplay = new JTextArea();
+//        onlineUsersDisplay.setEditable(false);
+//        onlineUsersDisplay.setFont(new Font("Arial", Font.PLAIN, 14));
+//        onlineUsersDisplay.setLineWrap(true);
+//        onlineUsersDisplay.setWrapStyleWord(true);
         JScrollPane onlineUsersScrollPane = new JScrollPane(onlineUsersDisplay);
         onlineUsersScrollPane.setBorder(BorderFactory.createTitledBorder("在线人数"));
         mainPanel.add(onlineUsersScrollPane, BorderLayout.EAST);
@@ -104,9 +120,9 @@ public class TCP_SignIn_Window extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        // 创建并显示窗口
-        new TCP_SignIn_Window();
+    public void refreshOnlineUser(String[] userNames) {
+        // 更新在线用户到页面中
+        onlineUsersDisplay.setListData(userNames);
     }
 }
 
