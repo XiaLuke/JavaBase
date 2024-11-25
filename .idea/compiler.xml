@@ -23,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="InternetPro" options="-parameters" />
+      <module name="JAVA" options="-parameters" />
       <module name="Spring-one-jdk17" options="-parameters" />
       <module name="design_pattern" options="-parameters" />
       <module name="java_core_technology" options="-parameters" />

@@ -22,6 +22,7 @@ public class Sender {
 //                break;
 //            }
         outputStream.write(msg.getBytes());
+        // 关闭输出流，让接收者不再陷入循环等待消息
         socket.shutdownOutput();
         // 反馈
         InputStream inputStream = socket.getInputStream();
